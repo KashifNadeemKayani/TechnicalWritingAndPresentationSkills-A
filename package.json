@@ -8,8 +8,7 @@
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://KashifNadeemKayani.github.io/TechnicalWritingAndPresentationSkills-A"
-},
+  "homepage": "https://KashifNadeemKayani.github.io/TechnicalWritingAndPresentationSkills-A",
   "dependencies": {
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
