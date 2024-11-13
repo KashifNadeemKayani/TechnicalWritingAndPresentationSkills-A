@@ -124,6 +124,9 @@
 
 import React, { useState } from 'react';
 import { FaDownload } from 'react-icons/fa';
+import previewImage from '../../public/pdfs/abc.jpg';
+
+import previewImage1 from '../../public/pdfs/abcs.jpg';
 import './Portfolio.css';
 
 const Portfolio = () => {
@@ -132,8 +135,8 @@ const Portfolio = () => {
 
   const task1Pdf = '/pdfs/TBWA1.pdf';
   const task2Pdf = '/pdfs/TBWA2.pdf';
-  const previewImage = '/pdfs/abc.jpg';
-  const previewImage1 = '/pdfs/abcs.jpg';
+  // const previewImage = '/pdfs/abc.jpg';
+  // const previewImage1 = '/pdfs/abcs.jpg';
 
   const task1Reflections = [
     { question: 'What did I learn from Task 1?', answer: 'In completing the technical documentation for setting up the router, I learnt the importance of clarity and precision in technical writing. The purpose of the assignment was to make the setup process simple enough for anyone to understand. It taught me to prefer clear language and simple explanations, especially when explaining steps.I realized that providing explanations for terms like "SSID," "network key," and "IP configuration" was essential to making the document understandable. Additionally, I learnt how essential visual aids can be in guiding the reader, as images and diagrams would enhance understanding and reduce the chances of error during the setup process.' },
