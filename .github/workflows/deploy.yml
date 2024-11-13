@@ -1,51 +1,28 @@
-name: Deploy
+name: Deploy React App to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main # Trigger on push to the main branch
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "lts/*" # Using the latest LTS version of Node.js
+          node-version: "20" # Explicitly set Node.js version to 20
 
       - name: Install dependencies
-        run: npm ci # Faster and more reliable than npm install
+        run: npm install
 
-      - name: Build project
+      - name: Build the app
         run: npm run build
 
-      - name: Upload production build files
-        uses: actions/upload-artifact@v3
-        with:
-          name: production-build
-          path: ./dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Download artifact from build
-        uses: actions/download-artifact@v3
-        with:
-          name: production-build
-          path: ./dist
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+        run: npm run deploy
